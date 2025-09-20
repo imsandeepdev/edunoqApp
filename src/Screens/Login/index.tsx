@@ -12,8 +12,23 @@ import R from '../../Res/R';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppButton, AppTextInput, StoryScreen } from '../../Components';
 import Style from './styles';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchDemoRequest } from '../../ReduxSaga/Slice/Demo/demoSlice';
 
 const LoginScreen = () => {
+
+  const dispatch = useDispatch<any>();
+  const demoState = useSelector((state: any) => state.demo);
+
+  useEffect(() => {
+    if (demoState.data) {
+      console.log('API Response:==>Demo Data:', demoState.data);
+    }
+    if (demoState.error) {
+      console.log('API Response:==>Demo Error:', demoState.error);
+    }
+  }, [demoState]);
+
 
   const [mobno, setMobno] = useState('');
   const [password, setPassword] = useState('');
@@ -21,6 +36,8 @@ const LoginScreen = () => {
   const handleLogin = () => {
     console.log('Login Mobile No:', mobno);
     console.log('Login Password:', password);
+    dispatch(fetchDemoRequest());
+
   }
 
   return (

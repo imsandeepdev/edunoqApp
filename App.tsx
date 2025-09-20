@@ -1,47 +1,31 @@
 /**
- * Sample React Native App
+ * EDUNOQ APP
+ * Copyright (c) 2025 EduNoq. All rights reserved.
+ * Sandeep Dev
  * https://github.com/facebook/react-native
  *
  * @format
  */
-
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
 import AppNavigator from './src/Navigator/AppNavigator';
+import { Provider } from 'react-redux';
+import { getStore } from './src/ReduxSaga/Store/store';
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  const store = getStore();
 
   return (
+    <Provider store={store}>
     <SafeAreaProvider>
       <AppNavigator />
-      {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent /> */}
     </SafeAreaProvider>
+    </Provider>
   );
 }
 
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
 
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
