@@ -7,6 +7,8 @@ const image = {
   edunoqApp: require('./images/edunoq1.png'),
   mobileIcon: require('./images/mobile.png'),
   passwordIcon: require('./images/password.png'),
+  nameIcon: require('./images/user.png'),
+  emailIcon: require('./images/email.png'),
 
 
 };

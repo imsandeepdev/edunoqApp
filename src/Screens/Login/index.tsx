@@ -6,14 +6,19 @@ import {
   Image,
   ScrollView,
   Linking,
+  TouchableOpacity,
 } from 'react-native';
 
 import R from '../../Res/R';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppButton, AppTextInput, StoryScreen } from '../../Components';
 import Style from './styles';
+import SIGNUP from '../Signup';
 
-const LoginScreen = () => {
+
+const LoginScreen  = () => {
+  const [mobno, setMobno] = useState('');
+  const [password, setPassword] = useState('');
  
 
   return (
@@ -44,8 +49,8 @@ const LoginScreen = () => {
                   title={'Mobile No'}
                   icon={R.image.mobileIcon}
                   placeholder={'Enter Mobile No'}
-                  value={''}
-                  onChangeText={(text) => (text)}
+                  value={mobno}
+                  onChangeText={(number) => setMobno(number)}
                   keyboardType={'number-pad'}
                   maxLength={10}
                 />
@@ -53,7 +58,7 @@ const LoginScreen = () => {
                   title={'Password'}
                   icon={R.image.passwordIcon}
                   placeholder={'Enter password'}
-                  value={''}
+                  value={password}
                   onChangeText={text => (text)}
                   maxLength={40}
                   secureTextEntry={true}
@@ -69,8 +74,8 @@ const LoginScreen = () => {
                   title={'Login'}
                   paddingVertical={R.fontSize.Size16}
                 />
-              
-              
+               
+             
               </View>
           </ScrollView>
         
