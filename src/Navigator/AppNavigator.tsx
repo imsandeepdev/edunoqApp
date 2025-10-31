@@ -5,16 +5,15 @@ import LoginScreen from "../Screens/Login";
 import SIGNUP from "../Screens/Signup";
 import OtpScreen from "../Screens/OtpScreen";
 import ProfileScreen from "../Screens/ProfileScreen";
-
-
-
+import HomeScreen from "../Screens/HomeScreen";
 
 const Stack = createStackNavigator();
+
 
 const AppNavigator = () => {
     return (
         <NavigationContainer>
-        <Stack.Navigator initialRouteName={'SIGNUP'}
+        <Stack.Navigator initialRouteName={'LoginScreen'}
         screenOptions={{gestureEnabled: false}}>
         <Stack.Screen
           name="LoginScreen"
@@ -22,7 +21,7 @@ const AppNavigator = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="SIGNUP"
+          name="SignUp"
           component={SIGNUP}
           options={{headerShown: false}}
         />
@@ -33,6 +32,11 @@ const AppNavigator = () => {
         <Stack.Screen
           name="ProfileScreen"
           component={ProfileScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
           options={{headerShown: false}}
         />
         

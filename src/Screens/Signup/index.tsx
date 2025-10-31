@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import {
   View,
@@ -11,14 +12,31 @@ import R from '../../Res/R';
 import { AppButton, AppTextInput, StoryScreen } from '../../Components';
 import Style from './styles';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchSignUpRequest } from '../../ReduxSaga/Slice/SignUp/SignUpSlice';
+import { RootState } from '../../ReduxSaga/Store/store'; // adjust path
+
+export type RootStackParamList = {
+  SignUp: undefined;
+  OtpScreen: { name: string; mobile: string; password: string };
+};
+
+type SignUpScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'SignUp'>;
 
 const SIGNUP = () => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<SignUpScreenNavigationProp>();
+  const dispatch = useDispatch();
 
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmPassword] = useState('');
+
+   // read API state
+  const { isAPILoading, data, error } = useSelector(
+    (state: RootState) => state.SignUp,
+  );
 
   const handleSignIn = () => {
     if (!name || !mobile || !password) {
@@ -30,9 +48,21 @@ const SIGNUP = () => {
       return;
     }
 
-    
-    navigation.navigate('OtpScreen', { name, mobile, password });
+     // 🔹 Dispatch saga action
+    dispatch(fetchSignUpRequest({ name, mobile, password }));
   };
+
+    
+  // Optionally react to success/failure
+  React.useEffect(() => {
+    if (data) {
+      Alert.alert('Success', 'Signup successful');
+      navigation.navigate('OtpScreen', { name, mobile, password });
+    }
+    if (error) {
+      Alert.alert('Error', error.message || 'Signup failed');
+    }
+  }, [data, error]);
 
   return (
     <StoryScreen>

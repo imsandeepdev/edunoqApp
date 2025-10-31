@@ -4,9 +4,10 @@ import R from "../../Res/R";
 const Style = StyleSheet.create({
   topView: {
     borderRadius: R.fontSize.Size5,
-    marginTop: R.fontSize.medium,
+    marginTop: R.fontSize.large,
   },
   mainView: {
+    backgroundColor: R.colors.lightWhite,
     height: R.fontSize.Size50,
     borderRadius: R.fontSize.Size4,
     alignItems: 'center',
@@ -27,8 +28,8 @@ const Style = StyleSheet.create({
     borderColor: R.colors.placeholderTextColor,
   },
   leftIcon: {
-    height: R.fontSize.Size26,
-    width: R.fontSize.Size26,
+    height: R.fontSize.Size22,
+    width: R.fontSize.Size22,
   },
   flexView: {
     flex: 1,
@@ -43,20 +44,23 @@ const Style = StyleSheet.create({
   },
   absoluteView: {
     position: 'absolute',
-    top: -R.fontSize.Size10,
-    left: R.fontSize.Size10,
+    top: -10,
+    left: 5,
   },
   headerMainView: {
-    height: R.fontSize.Size20,
-    backgroundColor: R.colors.white,
+    height: R.fontSize.Size18,
+    backgroundColor: R.colors.lightWhite,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: R.fontSize.Size10,
+    paddingHorizontal: R.fontSize.Size5,
+    borderRadius:4,
+    // borderWidth:1,
+    // borderColor:R.colors.appColor
   },
   headerTitle: {
     fontSize: R.fontSize.Size12,
-    fontWeight: '500',
-    color: R.colors.textPriColor,
+    fontWeight: '600',
+    color: R.colors.lightBlack,
   },
 });
 export default Style;

@@ -45,7 +45,7 @@ const OtpScreen = ({ route, navigation }: any) => {
     const enteredOtp = otp.join('');
     if (enteredOtp === correctOtp) {
       Alert.alert('✅ Success', `Welcome ${name}, Signup Complete!`);
-      navigation.navigate('ProfileScreen', { name, mobile, password });
+      navigation.navigate('HomeScreen', { name, mobile, password });
     } else {
       Alert.alert('❌ Error', 'Invalid OTP. Please try again.');
       setOtp(['', '', '', '']);

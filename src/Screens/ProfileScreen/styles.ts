@@ -2,18 +2,25 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-    backgroundColor: '#fff',
+    padding: 45,
+    backgroundColor: '#f5f5f5',
+    paddingBottom: 50,
   },
   title: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: 16,
+    color: '#333',
+    textAlign: 'center',
   },
   imageWrapper: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    backgroundColor: '#e0e0e0',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginBottom: 20,
   },
   image: {
@@ -25,30 +32,58 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
-    borderWidth: 1,
-    borderColor: '#aaa',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ddd',
   },
-  input: {
-    width: '100%',
-    borderWidth: 1,
-    borderColor: '#aaa',
+  // Connected Section Headers
+  sectionHeaderRow: {
+    flexDirection: 'row',
     borderRadius: 8,
-    padding: 10,
-    marginBottom: 15,
+    overflow: 'hidden',
+    marginBottom: 16,
+    alignSelf: 'center',
+  },
+  sectionHeaderItem: {
+    flex: 1,
+    paddingVertical: 18,
+    alignItems: 'center',
+    backgroundColor: 'rgba(214, 216, 218, 1)', // same color
+  },
+  sectionHeaderText: {
+    fontWeight: 'bold',
+    color: '#ffffffff',
+  },
+  selectedHeader: {
+    borderBottomWidth: 3,
+    borderBottomColor: '#FFD700', // gold underline for active section
+  },
+  unselectedHeader: {
+    borderBottomWidth: 3,
+    borderBottomColor: 'transparent', // no underline
+  },
+  card: {
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    padding: 16,
+    marginBottom: 16,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 3,
   },
   button: {
-    backgroundColor: '#4CAF50',
-    padding: 15,
+    backgroundColor: 'rgba(25, 118, 210, 1)',
+    paddingVertical: 14,
     borderRadius: 8,
-    width: '100%',
     alignItems: 'center',
+    marginTop: 10,
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
     fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 
