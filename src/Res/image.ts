@@ -16,6 +16,18 @@ const image = {
   moreTab: require('./images/bottomTab/more.png'),
   settingTab: require('./images/bottomTab/setting.png'),
   searchTab: require('./images/bottomTab/search.png'),
+  nameIcon: require('./images/user.png'),
+  emailIcon: require('./images/email.png'),
+  profileIcon: require('./images/profile.png'),
+  aiIcon: require('./images/ai.png'),
+  bookIcon: require('./images/book.png'),
+  reportIcon: require('./images/report.png'),
+  plansIcon: require('./images/plans.png'),
+  badgeIcon: require('./images/badge.png'),
+  uploadIcon: require('./images/upload.png'),
+
+
+
 
 };
 

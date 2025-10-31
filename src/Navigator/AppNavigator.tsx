@@ -12,6 +12,9 @@ import Home from "../Screens/Home";
 import Modules from "../Screens/Modules";
 import Leaderboard from "../Screens/Leaderboard";
 import Profile from "../Screens/Profile";
+import OtpScreen from "../Screens/OtpScreen";
+import ProfileScreen from "../Screens/ProfileScreen";
+import HomeScreen from "../Screens/HomeScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -78,7 +81,7 @@ const RenderTabNavigation = () => {
           ),
           tabBarButton: (props) => <CustomTabButton {...props} />
         }}
-        component={Home}
+        component={HomeScreen}
       />
 
       <Tab.Screen
@@ -116,7 +119,7 @@ const RenderTabNavigation = () => {
           ),
           tabBarButton: (props) => <CustomTabButton {...props} />
         }}
-        component={Profile}
+        component={ProfileScreen}
       />
     </Tab.Navigator>
   );
@@ -136,10 +139,25 @@ const AppNavigator = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="Signup"
+          name="SignUp"
           component={SIGNUP}
           options={{headerShown: false}}
         />
+        <Stack.Screen 
+        name="OtpScreen" 
+        component={OtpScreen} 
+        />
+        <Stack.Screen
+          name="ProfileScreen"
+          component={ProfileScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{headerShown: false}}
+        />
+        
         </Stack.Navigator>
         </NavigationContainer>
     )

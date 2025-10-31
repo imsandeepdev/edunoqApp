@@ -17,6 +17,7 @@ interface AppButtonProps {
     onPress?: () => void;
     textColor?: string;
     title: string;
+    titleFontSize?: number;  
 }
 
 const AppButton: React.FC<AppButtonProps> = (props) => {

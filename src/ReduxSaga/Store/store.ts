@@ -4,6 +4,7 @@ const createSagaMiddleware = require('redux-saga').default;
 import {ConfigureStoreOptions, configureStore} from '@reduxjs/toolkit';
 import { rootSaga } from './rootSaga';
 import { demoReducer } from '../Slice/Demo/demoSlice';
+import { SignUpReducer } from '../Slice/SignUp/SignUpSlice'; 
 
 let store: any = null;
 const sagaMiddleware = createSagaMiddleware();
@@ -11,6 +12,7 @@ const getStore = () => {
     const options: ConfigureStoreOptions = {
         reducer: {
             demo: demoReducer,
+            SignUp: SignUpReducer, 
         },
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
