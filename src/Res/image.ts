@@ -7,7 +7,15 @@ const image = {
   edunoqApp: require('./images/edunoq1.png'),
   mobileIcon: require('./images/mobile.png'),
   passwordIcon: require('./images/password.png'),
-
+  
+  homeTab: require('./images/bottomTab/home.png'),
+  storeTab: require('./images/bottomTab/store.png'),
+  historyTab: require('./images/bottomTab/history.png'),
+  cashbackTab: require('./images/bottomTab/cashback.png'),
+  scannerTab: require('./images/bottomTab/scanner.png'),
+  moreTab: require('./images/bottomTab/more.png'),
+  settingTab: require('./images/bottomTab/setting.png'),
+  searchTab: require('./images/bottomTab/search.png'),
 
 };
 

@@ -2,12 +2,12 @@ import * as React from 'react';
 import {  View,Text} from 'react-native';
 import Style from './styles';
 
-const SIGNUP = () => {
+const Modules = () => {
   return (
     <View style={Style.mainView }>
-      <Text>SIGNUP Screen</Text>
+      <Text>Modules Screen</Text>
     </View>
   )
 }
 
-export default SIGNUP;
+export default Modules;

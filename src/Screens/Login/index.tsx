@@ -15,7 +15,7 @@ import Style from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDemoRequest } from '../../ReduxSaga/Slice/Demo/demoSlice';
 
-const LoginScreen = () => {
+const LoginScreen = (props:any) => {
 
   const dispatch = useDispatch<any>();
   const demoState = useSelector((state: any) => state.demo);
@@ -36,7 +36,8 @@ const LoginScreen = () => {
   const handleLogin = () => {
     console.log('Login Mobile No:', mobno);
     console.log('Login Password:', password);
-    dispatch(fetchDemoRequest());
+    props.navigation.navigate("Dashboard")
+    // dispatch(fetchDemoRequest());
 
   }
 

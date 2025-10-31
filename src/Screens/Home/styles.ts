@@ -4,7 +4,8 @@ import R from '../../Res/R';
 const Style = StyleSheet.create({
   mainView: {
     flex: 1,
-    backgroundColor: R.colors.white,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
